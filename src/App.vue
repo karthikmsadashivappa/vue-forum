@@ -16,6 +16,19 @@
   text-align: center;
   color: #2c3e50;
 }
+
+.thread-container {
+  display: flex;
+}
+
+.userName {
+  width: 20%;
+}
+
+.post {
+  width: 70%;
+}
+
 #nav {
   padding: 30px;
 }

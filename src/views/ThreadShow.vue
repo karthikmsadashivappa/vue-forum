@@ -1,7 +1,6 @@
 <template>
   <div>
-    <h1>welcome to vue forum</h1>
-    <div v-for="thread in threads">
+    <div>
       <h2>{{thread.title}}</h2>
       <div v-for="postId in thread.posts" class="thread-container">
         <h3 class="userName">{{users[posts[postId].userId].name}}</h3>
@@ -13,11 +12,16 @@
 
 <script>
 import sourceData from "@/data";
-console.log(sourceData);
 export default {
+  props: {
+    id: {
+      required: true,
+      type: String
+    }
+  },
   data() {
     return {
-      threads: sourceData.threads,
+      thread: sourceData.threads[this.id],
       posts: sourceData.posts,
       users: sourceData.users
     };
